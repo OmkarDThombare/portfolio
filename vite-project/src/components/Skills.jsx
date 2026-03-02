@@ -3,14 +3,26 @@ import SectionHeader from "./SectionHeader";
 
 function Skills() {
   const skills = [
+    // Languages
     { name: "Java", gradient: "from-orange-500 to-red-500" },
+    { name: "C++", gradient: "from-indigo-500 to-purple-700" },
     { name: "JavaScript", gradient: "from-yellow-400 to-yellow-600" },
+
+    // Frontend
     { name: "React.js", gradient: "from-cyan-400 to-blue-500" },
+    { name: "Tailwind CSS", gradient: "from-sky-400 to-cyan-600" },
+
+    // Backend
     { name: "Node.js", gradient: "from-green-400 to-emerald-600" },
     { name: "Express.js", gradient: "from-gray-400 to-gray-600" },
+
+    // Database
     { name: "MongoDB", gradient: "from-emerald-400 to-green-700" },
     { name: "SQL", gradient: "from-blue-400 to-indigo-600" },
-    { name: "Tailwind CSS", gradient: "from-sky-400 to-cyan-600" },
+
+    // Tools
+    { name: "Git/GitHub", gradient: "from-orange-500 to-pink-600" },
+    { name: "CI/CD", gradient: "from-rose-500 to-red-700" },
   ];
 
   return (
