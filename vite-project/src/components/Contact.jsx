@@ -20,7 +20,8 @@ function Contact() {
           setStatus("Message sent successfully ✅");
           form.current.reset();
         },
-        () => {
+        (err) => {
+          console.log(err);
           setStatus("Something went wrong ❌");
         }
       );
