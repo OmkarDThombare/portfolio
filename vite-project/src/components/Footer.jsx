@@ -30,7 +30,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com/in/YOUR_USERNAME"
+            href="https://linkedin.com/in/omkarthombare2"
             target="_blank"
             rel="noreferrer"
             className="hover:text-purple-500 transition duration-300"
@@ -48,7 +48,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://leetcode.com/YOUR_USERNAME"
+            href="https://leetcode.com/Omkar_Thombare"
             target="_blank"
             rel="noreferrer"
             className="hover:text-purple-500 transition duration-300"
