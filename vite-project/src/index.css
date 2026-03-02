@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: "Cascadia Mono", monospace;
+}
+
+.contact-line {
+  @apply flex items-center gap-4 text-lg text-gray-300 
+  hover:text-white transition duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
