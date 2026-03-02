@@ -12,9 +12,9 @@ function App() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#0F172A] to-[#1E293B] text-white">
       <Navbar />
       <Hero />
+      <About />
       <Projects />
       <Skills />
-      <About />
       <Contact />
       <Footer />
     </div>

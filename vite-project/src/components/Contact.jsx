@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { FaDownload } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
@@ -10,11 +9,11 @@ function Contact() {
     e.preventDefault();
 
     emailjs.sendForm(
-  import.meta.env.VITE_EMAIL_SERVICE_ID,
-  import.meta.env.VITE_EMAIL_TEMPLATE_ID,
-  form.current,
-  import.meta.env.VITE_EMAIL_PUBLIC_KEY
-)
+      import.meta.env.VITE_EMAIL_SERVICE_ID,
+      import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+      form.current,
+      import.meta.env.VITE_EMAIL_PUBLIC_KEY
+    )
       .then(
         () => {
           setStatus("Message sent successfully ✅");
@@ -28,106 +27,109 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 px-6">
+    <section id="contact" className="py-16 md:py-28 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Let’s Connect
           </h2>
 
-          <div className="w-24 h-[2px] bg-gradient-to-r 
+          <div className="w-20 h-[2px] bg-gradient-to-r 
                           from-purple-500 to-blue-500 
                           mx-auto mt-6 rounded-full">
           </div>
         </div>
 
         {/* Main Grid */}
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
 
           {/* LEFT SIDE */}
-          <div className="space-y-8">
-
-            <h3 className="text-3xl md:text-4xl font-semibold leading-snug">
-              Open to building impactful digital products.
+          <div className="space-y-6">
+            <h3 className="text-2xl md:text-3xl font-semibold leading-snug">
+              Let’s build something meaningful.
             </h3>
 
-            <p className="text-gray-400 text-lg leading-relaxed">
-              Whether you have a project idea, a role opportunity,
-              or just want to connect — feel free to reach out.
-              I’m always open to meaningful collaborations.
+            <p className="text-gray-400 text-base leading-relaxed">
+              Have an idea, opportunity, or just want to connect?
+              I’m always open to conversations around development,
+              collaboration, and growth.
             </p>
-
-            <a
-              href="/Omkar_Thombare.pdf"
-              download
-              className="inline-flex items-center gap-3 
-                         px-7 py-3 rounded-lg 
-                         bg-gradient-to-r from-emerald-600 to-teal-500
-                         text-white font-medium
-                         hover:scale-105 transition duration-300"
-            >
-              <FaDownload />
-              Download Resume
-            </a>
-
           </div>
 
-          {/* RIGHT SIDE – FORM */}
+          {/* RIGHT SIDE – MODERN FORM */}
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="bg-white/5 backdrop-blur-xl 
-                       border border-white/10 
-                       rounded-2xl p-10 space-y-6"
+            className="space-y-8"
           >
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              <input
-                type="text"
-                name="user_name"
-                placeholder="Name"
-                required
-                className="w-full p-4 rounded-lg bg-white/10 
-                           text-white placeholder-gray-400 
-                           outline-none focus:ring-2 focus:ring-purple-500"
-              />
+            {/* Name + Email */}
+            <div className="grid sm:grid-cols-2 gap-8">
 
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Email"
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-400 mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="user_name"
+                  required
+                  className="bg-transparent border-b border-white/20 
+                             focus:border-purple-500 
+                             outline-none py-2 text-white
+                             transition duration-300"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-400 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="user_email"
+                  required
+                  className="bg-transparent border-b border-white/20 
+                             focus:border-purple-500 
+                             outline-none py-2 text-white
+                             transition duration-300"
+                />
+              </div>
+
+            </div>
+
+            {/* Message */}
+            <div className="flex flex-col">
+              <label className="text-sm text-gray-400 mb-2">
+                Message
+              </label>
+              <textarea
+                name="message"
+                rows="4"
                 required
-                className="w-full p-4 rounded-lg bg-white/10 
-                           text-white placeholder-gray-400 
-                           outline-none focus:ring-2 focus:ring-purple-500"
+                className="bg-transparent border-b border-white/20 
+                           focus:border-purple-500 
+                           outline-none py-2 text-white
+                           resize-none transition duration-300"
               />
             </div>
 
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Message"
-              required
-              className="w-full p-4 rounded-lg bg-white/10 
-                         text-white placeholder-gray-400 
-                         outline-none focus:ring-2 focus:ring-purple-500"
-            />
-
+            {/* Button */}
             <button
               type="submit"
-              className="w-full py-3 rounded-lg 
-                         bg-gradient-to-r from-purple-500 
-                         via-indigo-500 to-blue-500
-                         text-white font-semibold
-                         hover:scale-105 transition duration-300"
+              className="mt-4 px-8 py-3 
+                         border border-white/20
+                         text-white font-medium 
+                         hover:bg-white hover:text-black
+                         transition duration-300"
             >
-              Send Message
+              Send Message →
             </button>
 
             {status && (
-              <p className="text-center text-sm text-gray-300 mt-2">
+              <p className="text-sm text-gray-400 mt-4">
                 {status}
               </p>
             )}

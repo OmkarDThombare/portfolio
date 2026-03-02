@@ -14,16 +14,18 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-28 px-6">
+    <section id="skills" className="py-12 md:py-24 px-6">
       <div className="max-w-5xl mx-auto">
 
         <SectionHeader title="Skills" />
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {skills.map((skill, index) => (
             <span
               key={index}
-              className={`px-6 py-2 rounded-lg text-sm font-semibold text-white
+              className={`px-4 md:px-6 py-2 
+                          rounded-lg text-xs md:text-sm 
+                          font-semibold text-white
                           bg-gradient-to-r ${skill.gradient}
                           shadow-lg shadow-white/10
                           hover:shadow-2xl hover:scale-105 hover:-translate-y-1
